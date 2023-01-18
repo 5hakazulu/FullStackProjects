@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-const pgp = require("pg-promise")();
-const db = pgp("postgres://postgres:password@localhost:5432/full_stack_development");
+// const pgp = require("pg-promise")();
+// const db = pgp("postgres://postgres:password@localhost:5432/full_stack_development");
 
 const port = 3000;
 
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const { Sequelize, DataTypes } = require("sequelize");
-const { Posts, User } = require("./models");
+const { Item, User, Auction } = require("./models");
 
 // app.get("/", (req, res) => {
 //   res.render("index");
