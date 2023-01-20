@@ -13,9 +13,10 @@ app.use(express.static("public"));
 const { Sequelize, DataTypes } = require("sequelize");
 const { Item, Consignor, Auction } = require("./models");
 
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
 
 
 //add new person
