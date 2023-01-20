@@ -10,12 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
       static associate(models) {
-        Item.belongsTo(models.consignor, {
-            foreignKey: 'itemId',
+        Item.belongsTo(models.Consignor, {
+            foreignKey: 'consignorId',
             onDelete: 'CASCADE'
         });
-        Item.belongsTo(models.auction, {
-          foreignKey: 'itemId',
+        Item.belongsTo(models.Auction, {
+          foreignKey: 'auctionId',
           onDelete: 'CASCADE'
       });
     }
