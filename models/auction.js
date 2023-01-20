@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Auction.hasMany(models.item, {
+        foreignKey: 'auctionId'
+      });
     }
   }
   Auction.init({
