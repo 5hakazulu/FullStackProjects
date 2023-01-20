@@ -11,11 +11,61 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const { Sequelize, DataTypes } = require("sequelize");
-const { Item, User, Auction } = require("./models");
+const { Item, Consignor, Auction } = require("./models");
 
 // app.get("/", (req, res) => {
 //   res.render("index");
 // });
+
+
+//add new person
+app.post('/newPerson', async (req, res) => {
+  console.log(req.body);
+  const { firstName, lastName, username, email } = req.body;
+  const newPerson = await Consignor.create({
+    firstName,
+    lastName,
+    username,
+    email
+  });
+
+  res.json({
+    name: newPerson.firstName + newPerson.lastName
+  });
+})
+
+// add new item
+app.post('/newItem', async (req, res) => {
+  console.log(req.body);
+  const { itemName, itemPictures, itemDescription } = req.body
+  const newAuctionItem = await Item.create({
+    itemName,
+    itemPictures,
+    itemDescription
+  })
+
+  res.json({
+    Item: newAuctionItem.itemName,
+
+  })
+  console.log(`${newAuctionItem.itemName} added.`);
+})
+
+//add new auction location
+app.post('/newAuction', async (req, res) => {
+  console.log(req.body);
+  const { auctionName, auctionDate } = req.body
+  const newAuctionLocation = await Auction.create({
+    auctionName,
+    auctionDate
+  })
+
+  res.json({
+    Auction: newAuctionLocation.auctionName,
+
+  })
+
+})
 
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
