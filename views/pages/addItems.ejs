@@ -1,0 +1,40 @@
+<%- include('../template/head')-%>
+<%- include('../template/nav')-%>
+<!-- <h1>add items page</h1> -->
+<form id="additem" class="ps-3">
+    <h1>add item</h1>
+    <label for="itemName">Title:</label><br>
+    <input type="text" id="title" class="title" name="title" placeholder="Vase"><br>
+    <!-- <label for="catagory">Catagory:</label><br>
+    <input type="text" id="catagory" class="catagory" name="catagory" placeholder="Travel"><br> -->
+    <!-- <label for="body">Body:</label><br> -->
+    <!-- <input type="text" id="body" name="body" placeholder="Write your blog here!"><br><br> -->
+    <label for="freeform">Item Description:</label>
+    <br>
+    <textarea id="freeform" class="body" name="freeform" rows="4" cols="50">
+    </textarea><br><br>
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Right-aligned menu
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button">Action</button>
+          <button class="dropdown-item" type="button">Another action</button>
+          <button class="dropdown-item" type="button">Something else here</button>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Right-aligned menu
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button">Action</button>
+          <button class="dropdown-item" type="button">Another action</button>
+          <button class="dropdown-item" type="button">Something else here</button>
+        </div>
+      </div>
+      <br>
+    <input class="mt-3" type="submit" value="Submit">
+    
+</form>
+<%- include('../template/footer')-%>
