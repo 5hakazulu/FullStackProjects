@@ -14,9 +14,21 @@ const { Sequelize, DataTypes } = require("sequelize");
 const { Item, Consignor, Auction } = require("./models");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("pages/index");
 });
 
+
+app.get("/additems", (req, res) => {
+  res.render("pages/additems");
+});
+
+app.get("/addconsignors", (req, res) => {
+  res.render("pages/addconsignors");
+});
+
+app.get("/addauctions", (req, res) => {
+  res.render("pages/addauctions");
+});
 
 
 //add new person
