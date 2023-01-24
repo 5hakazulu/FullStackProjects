@@ -33,8 +33,8 @@ const sendItem = async (e) => {
     });
 };
 
-// const itemForm = document.getElementById("addItem");
-// itemForm.addEventListener("submit", sendItem);
+// const form = document.getElementById("addItem");
+// form.addEventListener("submit", sendItem);
 
 
 // HANDLE AUCTION FORM
@@ -110,5 +110,20 @@ const sendConsignor = async (e) => {
     });
 };
 
-const consignorForm = document.getElementById("addConsignor");
-consignorForm.addEventListener("submit", sendConsignor);
+// const consignorForm = document.getElementById("addConsignor");
+// consignorForm.addEventListener("submit", sendConsignor);
+
+// const form = document.getElementById("formdiv");
+// form.addEventListener("itemSubmit", sendItem);
+// form.addEventListener("auctionSubmit", sendAuction);
+// form.addEventListener("consignorSubmit", sendConsignor);
+
+const differentForms = {
+  sendConsignor,
+  sendAuction,
+  sendItem
+}
+
+const submitForm = document.querySelector(".form")
+const whichFormToUse = form.id
+submitForm.addEventListener(`submit` , differentForms[whichFormToUse])
