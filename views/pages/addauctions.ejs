@@ -1,4 +1,14 @@
 <%- include('../template/head')-%>
 <%- include('../template/nav')-%>
-<h1>add Auctions page</h1>
+
+  <h1>Add Auction</h1>
+  <form id="addAuction" class="px-3">
+    <label for="" class="form-label">Auction Name</label>
+    <input type="text" class="form-control" name="auctionName" id="auctionName">
+    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    <label for="auctionDate">Auction Date</label>
+    <input id="auctionDate" class="form-control" type="date">
+  <input class="mt-3 mb-3" type="submit" value="submit">
+</form>
+
 <%- include('../template/footer')-%>
