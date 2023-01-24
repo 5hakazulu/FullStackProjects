@@ -17,6 +17,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 const { Item, Consignor, Auction } = require("./models");
 const sequelize = new Sequelize("postgres://postgres:password@localhost:5432/full_stack_development") // Example for postgres
 
+
 app.get("/inventory", (req, res) => {
   res.render('pages/inventory');
 });
@@ -25,6 +26,25 @@ app.get('/items', async (req, res) => {
   const items = await Item.findAll({ include: [Consignor, Auction] });
   res.json(items);
 })
+
+app.get("/", (req, res) => {
+  res.render("pages/index");
+});
+
+
+app.get("/additems", (req, res) => {
+  res.render("pages/additems");
+});
+
+app.get("/addconsignors", (req, res) => {
+  res.render("pages/addconsignors");
+});
+
+app.get("/addauctions", (req, res) => {
+  res.render("pages/addauctions");
+});
+
+
 
 //add new person
 app.post('/newPerson', async (req, res) => {
