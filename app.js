@@ -4,6 +4,8 @@ const app = express();
 // const pgp = require("pg-promise")();
 // const db = pgp("postgres://postgres:password@localhost:5432/full_stack_development");
 
+
+
 const port = 3000;
 
 app.set("view engine", "ejs");
@@ -11,13 +13,18 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const { Sequelize, DataTypes } = require("sequelize");
+// const { db } = require("./models");
 const { Item, Consignor, Auction } = require("./models");
+const sequelize = new Sequelize("postgres://postgres:password@localhost:5432/full_stack_development") // Example for postgres
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/inventory", (req, res) => {
+  res.render('pages/inventory');
 });
 
-
+app.get('/items', async (req, res) => {
+  const items = await Item.findAll({ include: [Consignor, Auction] });
+  res.json(items);
+})
 
 //add new person
 app.post('/newPerson', async (req, res) => {
