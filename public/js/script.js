@@ -15,7 +15,7 @@ const sendItem = async (e) => {
   e.preventDefault();
   const data = new FormData(e.target);
   const stringified = stringifyAddItem(data);
-  const response = await fetch("http://127.0.0.1:3000/newItem", {
+  const response = await fetch("/newItem", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
