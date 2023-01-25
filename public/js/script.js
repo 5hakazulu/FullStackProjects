@@ -8,7 +8,6 @@ function stringifyAddItem(fd) {
     auctionId: document.getElementById("auctionId").value,
     consignorId: document.getElementById("consignorId").value,
   };
-  console.log(data);
   return JSON.stringify(data);
 }
 
@@ -43,17 +42,13 @@ function stringifyAddAuction(fd) {
     auctionName: document.getElementById("auctionName").value,
     auctonDate: document.getElementById("auctionDate").value,
   };
-  console.log(data)
   return JSON.stringify(data);
 }
 
 const sendAuction = async (e) => {
   e.preventDefault();
-  console.log(`click`)
   const data = new FormData(e.target);
   const stringified = stringifyAddAuction(data);
-  console.log(data)
-  console.log(stringified)
   const response = await fetch("http://127.0.0.1:3000/newAuction", {
     method: "POST",
     headers: {
@@ -82,17 +77,13 @@ function stringifyAddConsignor(fd) {
     username: document.getElementById("username").value,
     email: document.getElementById("email").value,
   };
-  console.log(data)
   return JSON.stringify(data);
 }
 
 const sendConsignor = async (e) => {
   e.preventDefault();
-  console.log(`click`)
   const data = new FormData(e.target);
   const stringified = stringifyAddConsignor(data);
-  console.log(data)
-  console.log(stringified)
   const response = await fetch("http://127.0.0.1:3000/newConsignor", {
     method: "POST",
     headers: {
@@ -113,11 +104,6 @@ const sendConsignor = async (e) => {
 // const consignorForm = document.getElementById("addConsignor");
 // consignorForm.addEventListener("submit", sendConsignor);
 
-// const form = document.getElementById("formdiv");
-// form.addEventListener("itemSubmit", sendItem);
-// form.addEventListener("auctionSubmit", sendAuction);
-// form.addEventListener("consignorSubmit", sendConsignor);
-
 const differentForms = {
   sendConsignor,
   sendAuction,
@@ -125,5 +111,5 @@ const differentForms = {
 }
 
 const submitForm = document.querySelector(".form")
-const whichFormToUse = form.id
+const whichFormToUse = submitForm.id
 submitForm.addEventListener(`submit` , differentForms[whichFormToUse])
