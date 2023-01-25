@@ -1,18 +1,19 @@
 <%- include('../template/head')-%>
+    <%- include('../template/nav')-%>
 
-    <body>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Item Name</th>
-                    <th scope="col">Picture</th>
-                    <th scope="col">Item Description</th>
-                    <th scope="col">Consignor Name</th>
-                    <th scope="col">Auction Name</th>
-                </tr>
-            </thead>
-            <tbody id="inventoryTable">
-                <!-- <tr>
+        <body>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Picture</th>
+                        <th scope="col">Item Description</th>
+                        <th scope="col">Consignor Name</th>
+                        <th scope="col">Auction Name</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTable">
+                    <!-- <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
@@ -29,9 +30,13 @@
                     <td colspan="2">Larry the Bird</td>
                     <td>@twitter</td>
                 </tr> -->
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
 
-        <script src="/js/inventory.js"></script>
-    </body>
+            <script src="/js/inventory.js"></script>
+        </body>
+
+        <%- include('../template/footer')-%>
+
+            </html>
