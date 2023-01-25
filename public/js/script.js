@@ -40,7 +40,7 @@ const sendItem = async (e) => {
 function stringifyAddAuction(fd) {
   const data = {
     auctionName: document.getElementById("auctionName").value,
-    auctonDate: document.getElementById("auctionDate").value,
+    auctionDate: document.getElementById("auctionDate").value,
   };
   return JSON.stringify(data);
 }
@@ -48,6 +48,7 @@ function stringifyAddAuction(fd) {
 const sendAuction = async (e) => {
   e.preventDefault();
   const data = new FormData(e.target);
+  console.log(data);
   const stringified = stringifyAddAuction(data);
   const response = await fetch("/newAuction", {
     method: "POST",
@@ -83,6 +84,7 @@ function stringifyAddConsignor(fd) {
 const sendConsignor = async (e) => {
   e.preventDefault();
   const data = new FormData(e.target);
+
   const stringified = stringifyAddConsignor(data);
   const response = await fetch("/newConsignor", {
     method: "POST",
