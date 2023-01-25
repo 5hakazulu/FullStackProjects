@@ -5,8 +5,8 @@ function stringifyAddItem(fd) {
     itemName: fd.get("itemName"),
     // itemPictures: fd.get("itemPictures"),
     itemDescription: document.getElementById("itemDescription").value,
-    auctionId: document.getElementById("auctionId").value,
-    consignorId: document.getElementById("consignorId").value,
+    auctionId: parseInt(document.getElementById("auctionId").value),
+    consignorId: parseInt(document.getElementById("consignorId").value),
   };
   return JSON.stringify(data);
 }
