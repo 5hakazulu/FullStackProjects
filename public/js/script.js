@@ -5,8 +5,8 @@ function stringifyAddItem(fd) {
     itemName: fd.get("itemName"),
     // itemPictures: fd.get("itemPictures"),
     itemDescription: document.getElementById("itemDescription").value,
-    auctionId: document.getElementById("auctionId").value,
-    consignorId: document.getElementById("consignorId").value,
+    auctionId: parseInt(document.getElementById("auctionId").value),
+    consignorId: parseInt(document.getElementById("consignorId").value),
   };
   return JSON.stringify(data);
 }
@@ -40,7 +40,7 @@ const sendItem = async (e) => {
 function stringifyAddAuction(fd) {
   const data = {
     auctionName: document.getElementById("auctionName").value,
-    auctonDate: document.getElementById("auctionDate").value,
+    auctionDate: document.getElementById("auctionDate").value,
   };
   return JSON.stringify(data);
 }

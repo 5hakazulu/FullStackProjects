@@ -47,7 +47,7 @@ app.get("/addauctions", (req, res) => {
 
 
 //add new person
-app.post('/newPerson', async (req, res) => {
+app.post('/newConsignor', async (req, res) => {
   console.log(req.body);
   const { firstName, lastName, username, email } = req.body;
   const newPerson = await Consignor.create({
@@ -65,11 +65,14 @@ app.post('/newPerson', async (req, res) => {
 // add new item
 app.post('/newItem', async (req, res) => {
   console.log(req.body);
-  const { itemName, itemPictures, itemDescription } = req.body
+  const { itemName, itemPictures, itemDescription, consignorId, auctionId} = req.body
   const newAuctionItem = await Item.create({
     itemName,
     itemPictures,
-    itemDescription
+    itemDescription,
+    consignorId,
+    auctionId
+
   })
 
   res.json({
