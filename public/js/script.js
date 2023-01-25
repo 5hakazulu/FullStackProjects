@@ -49,7 +49,7 @@ const sendAuction = async (e) => {
   e.preventDefault();
   const data = new FormData(e.target);
   const stringified = stringifyAddAuction(data);
-  const response = await fetch("http://127.0.0.1:3000/newAuction", {
+  const response = await fetch("/newAuction", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const sendConsignor = async (e) => {
   e.preventDefault();
   const data = new FormData(e.target);
   const stringified = stringifyAddConsignor(data);
-  const response = await fetch("http://127.0.0.1:3000/newConsignor", {
+  const response = await fetch("/newConsignor", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -112,4 +112,4 @@ const differentForms = {
 
 const submitForm = document.querySelector(".form")
 const whichFormToUse = submitForm.id
-submitForm.addEventListener(`submit` , differentForms[whichFormToUse])
+submitForm.addEventListener(`submit`, differentForms[whichFormToUse])

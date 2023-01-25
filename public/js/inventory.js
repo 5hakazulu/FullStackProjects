@@ -3,7 +3,7 @@ console.log("This is a test.")
 document.addEventListener('DOMContentLoaded', getAllItems);
 
 async function getAllItems() {
-    const itemResponse = await fetch('http://localhost:3000/items');
+    const itemResponse = await fetch('/items');
     const items = await itemResponse.json();
     let htmlString = '';
     console.log(items)
