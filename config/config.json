@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": "password",
-    "database": "full_stack_production",
-    "host": "127.0.0.1",
+    "username": "auction_management_app_user",
+    "password": "Y7F8kE5H9TSoIJLY4NMye1bu91cYEoYL",
+    "database": "auction_management_app",
+    "host": "dpg-cf87fe5a499fsd2e5va0-a",
     "dialect": "postgres"
   }
 }

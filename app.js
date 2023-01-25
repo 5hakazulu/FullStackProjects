@@ -15,7 +15,7 @@ app.use(express.static("public"));
 const { Sequelize, DataTypes } = require("sequelize");
 // const { db } = require("./models");
 const { Item, Consignor, Auction } = require("./models");
-const sequelize = new Sequelize("postgres://postgres:password@localhost:5432/full_stack_development") // Example for postgres
+const sequelize = new Sequelize("postgres://auction_management_app_user:Y7F8kE5H9TSoIJLY4NMye1bu91cYEoYL@dpg-cf87fe5a499fsd2e5va0-a/auction_management_app") // Example for postgres
 
 
 app.get("/inventory", (req, res) => {
