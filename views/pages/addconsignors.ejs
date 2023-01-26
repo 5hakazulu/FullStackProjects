@@ -1,19 +1,22 @@
 <%- include('../template/head')-%>
-<%- include('../template/nav')-%>
+  <%- include('../template/nav')-%>
 
-  <h1>Add Consignor</h1>
-  <form class="form" id="sendConsignor"class="px-3">
-    <label for="" class="form-label">First Name</label>
-    <input type="text" class="form-control" name="firstName" id="firstName">
-    <label for="" class="form-label">Last Name</label>
-    <input type="text" class="form-control" name="lastName" id="lastName">
-    <label for="" class="form-label">Username</label>
-    <input type="text" class="form-control" name="username" id="username">
-    <label for="" class="form-label">Email</label>
-    <input type="text" class="form-control" name="email" id="email">
-    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-  <input class="mt-3 mb-3" type="submit" value="submit">
-</form>
+    <body class="container-fluid mt-5 pt-2 px-3">
+      <h1 class="mt-4">Add Consignor</h1>
+      <form class="form" id="sendConsignor" class="mx-2 px-3">
+        <label for="" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="firstName" id="firstName">
+        <label for="" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lastName" id="lastName">
+        <label for="" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" id="username">
+        <label for="" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        <input class="mt-3 mb-3" type="submit" value="submit">
+      </form>
+    </body>
 
-<%- include('../template/footer')-%>
-<script src="/js/script.js" async defer></script>
+
+    <%- include('../template/footer')-%>
+      <script src="/js/script.js" async defer></script>

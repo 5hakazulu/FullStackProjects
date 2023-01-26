@@ -1,34 +1,37 @@
 <%- include('../template/head')-%>
   <%- include('../template/nav')-%>
 
-    <h1>Add Item</h1>
-    <form class="form" id="sendItem" class="px-3">
-      <label for="" class="form-label">Item Name</label>
-      <input type="text" class="form-control" name="itemName">
-      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-      <div class="mb-3">
-        <label for="" class="form-label">Item Description</label>
-        <textarea class="form-control" id="itemDescription" rows="3"></textarea>
-      </div>
-      <label for="consignorId" class="form-label">Consignor</label>
-      <input class="form-control" list="consignorOptions" id="consignorId" placeholder="Type to search...">
-      <datalist id="consignorOptions">
-        <option value="1">
-        <option value="Consignor 2">
-        <option value="Consignor 3">
-      </datalist>
-      <label for="auctionId" class="form-label mt-3">Auction</label>
-      <input class="form-control" list="auctionOptions" id="auctionId" placeholder="Type to search...">
-      <datalist id="auctionOptions">
-        <option value="1">
-        <option value="Auction 2">
-        <option value="Auction 3">
-      </datalist>
-      <br>
-      <input class="mt-3 mb-3" type="submit" value="submit">
-    </form>
+    <body class="container-fluid mt-5 pt-2 px-3">
+      <h1 class="mt-4">Add Item</h1>
+      <form class="form" id="sendItem" class="mx-2 px-3">
+        <label for="" class="form-label">Item Name</label>
+        <input type="text" class="form-control" name="itemName">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        <div class="mb-3">
+          <label for="" class="form-label">Item Description</label>
+          <textarea class="form-control" id="itemDescription" rows="3"></textarea>
+        </div>
+        <label for="consignorId" class="form-label">Consignor</label>
+        <input class="form-control" list="consignorOptions" id="consignorId" placeholder="Type to search...">
+        <datalist id="consignorOptions">
+          <option value="1">
+          <option value="Consignor 2">
+          <option value="Consignor 3">
+        </datalist>
+        <label for="auctionId" class="form-label mt-3">Auction</label>
+        <input class="form-control" list="auctionOptions" id="auctionId" placeholder="Type to search...">
+        <datalist id="auctionOptions">
+          <option value="1">
+          <option value="Auction 2">
+          <option value="Auction 3">
+        </datalist>
+        <br>
+        <input class="mt-3 mb-3" type="submit" value="submit">
+      </form>
 
-    <%- include('../template/footer')-%>
-      <script src="/js/script.js" async defer></script>
+      <%- include('../template/footer')-%>
+        <script src="/js/script.js" async defer></script>
+    </body>
 
-      </html>
+
+    </html>

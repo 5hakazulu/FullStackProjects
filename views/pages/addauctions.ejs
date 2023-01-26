@@ -1,15 +1,19 @@
 <%- include('../template/head')-%>
-<%- include('../template/nav')-%>
+  <%- include('../template/nav')-%>
 
-  <h1>Add Auction</h1>
-  <form class="form" id="sendAuction" class="px-3">
-    <label for="" class="form-label">Auction Name</label>
-    <input type="text" class="form-control" name="auctionName" id="auctionName">
-    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-    <label for="auctionDate">Auction Date</label>
-    <input id="auctionDate" class="form-control" type="date">
-  <input class="mt-3 mb-3" type="submit" value="submit">
-</form>
 
-<%- include('../template/footer')-%>
-<script src="/js/script.js" async defer></script>
+    <body class="container-fluid mt-5 pt-2 px-3">
+      <h1 class="mt-4">Add Auction</h1>
+      <form class="form" id="sendAuction" class="mx-2 px-3">
+        <label for="" class="form-label">Auction Name</label>
+        <input type="text" class="form-control" name="auctionName" id="auctionName">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        <label for="auctionDate">Auction Date</label>
+        <input id="auctionDate" class="form-control" type="date">
+        <input class="mt-3 mb-3" type="submit" value="submit">
+      </form>
+    </body>
+
+
+    <%- include('../template/footer')-%>
+      <script src="/js/script.js" async defer></script>
