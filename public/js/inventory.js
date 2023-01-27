@@ -13,8 +13,11 @@ async function getAllItems() {
                     <th scope="row">${items[i].itemName}</th>
                     <td>${items[i].itemPicture}</td>
                     <td>${items[i].itemDescription}</td>
-                    <td>${items[i].Consignor.firstName}${items[i].Consignor.lastName}</td>
+                    <td>${items[i].Consignor.firstName} ${items[i].Consignor.lastName}</td>
                     <td>${items[i].Auction.auctionName}</td>
+                    <td><button type="button" class="btn btn-secondary remove-contact" id=${i}> Remove </button></td>
+                    
+                    
                 </tr> `
 
 
