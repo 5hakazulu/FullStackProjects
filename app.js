@@ -27,6 +27,16 @@ app.get('/items', async (req, res) => {
   res.json(items);
 })
 
+app.get('/consignors', async (req, res) => {
+  const consignors = await Consignor.findAll();
+  res.json(consignors);
+})
+
+app.get('/auctions', async (req, res) => {
+  const auctions = await Auction.findAll();
+  res.json(auctions);
+})
+
 app.get("/", (req, res) => {
   res.render("pages/index");
 });

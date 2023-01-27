@@ -1,4 +1,3 @@
-
 // HANDLE ITEM FORM
 function stringifyAddItem(fd) {
   const data = {
@@ -32,10 +31,6 @@ const sendItem = async (e) => {
     });
 };
 
-// const form = document.getElementById("addItem");
-// form.addEventListener("submit", sendItem);
-
-
 // HANDLE AUCTION FORM
 function stringifyAddAuction(fd) {
   const data = {
@@ -67,9 +62,6 @@ const sendAuction = async (e) => {
     });
 };
 
-// const auctionForm = document.getElementById("addAuction");
-// auctionForm.addEventListener("submit", sendAuction);
-
 // HANDLE CONSIGNOR FORM
 function stringifyAddConsignor(fd) {
   const data = {
@@ -84,7 +76,6 @@ function stringifyAddConsignor(fd) {
 const sendConsignor = async (e) => {
   e.preventDefault();
   const data = new FormData(e.target);
-
   const stringified = stringifyAddConsignor(data);
   const response = await fetch("/newConsignor", {
     method: "POST",
@@ -103,15 +94,45 @@ const sendConsignor = async (e) => {
     });
 };
 
-// const consignorForm = document.getElementById("addConsignor");
-// consignorForm.addEventListener("submit", sendConsignor);
-
+//1 event to rule them all
 const differentForms = {
   sendConsignor,
   sendAuction,
-  sendItem
+  sendItem,
+};
+const submitForm = document.querySelector(".form");
+const whichFormToUse = submitForm.id;
+submitForm.addEventListener(`submit`, differentForms[whichFormToUse]);
+
+//Fill consignor dropdown
+async function getAllConsignors() {
+  const consignorResponse = await fetch("/Consignors");
+  const consignors = await consignorResponse.json();
+  let htmlString = "";
+  console.log(consignors);
+
+  for (let i = 0; i < consignors.length; i++) {
+    htmlString += ` 
+    <option value="${consignors[i].id}">`;
+  }
+  console.log(htmlString);
+  document.getElementById("consignorOptions").innerHTML = htmlString;
 }
 
-const submitForm = document.querySelector(".form")
-const whichFormToUse = submitForm.id
-submitForm.addEventListener(`submit`, differentForms[whichFormToUse])
+//Fill Auction Dropdown
+async function getAllAuctions() {
+  const auctionResponse = await fetch("/Auctions");
+  const auctions = await auctionResponse.json();
+  let htmlString = "";
+  console.log(auctions);
+
+  for (let i = 0; i < auctions.length; i++) {
+    htmlString += ` 
+    <option value="${auctions[i].id}">`;
+  }
+  console.log(htmlString);
+  document.getElementById("auctionOptions").innerHTML = htmlString;
+}
+
+getAllConsignors()
+getAllAuctions()
